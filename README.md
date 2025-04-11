@@ -1,74 +1,81 @@
-## ✅ Task: Build a Version-Controlled DevOps Project with Git
+# DevOps Project 🚀
 
----
+This is a version-controlled DevOps project designed to demonstrate Infrastructure as Code (IaC), CI/CD, and Git best practices using tools like **Terraform**, **GitHub Actions**, and **AWS EC2**.
 
-### 🔹 Objective:
-Manage a DevOps project using Git best practices, including branch strategy, CI/CD integration, and Terraform infrastructure management.
 
----
+## 📌 Project Overview
 
-### 🔧 Tools Used:
-- Git & GitHub
-- Terraform
-- GitHub Actions
-- Markdown
+This project provisions an AWS EC2 instance using Terraform and manages the infrastructure workflow through a fully automated CI/CD pipeline with GitHub Actions.
 
----
+## 🧰 Tools & Technologies Used
 
-## 📌 Workflow Summary
+- **Git & GitHub** – Version control and remote collaboration
+- **Terraform** – Infrastructure as Code (IaC) tool to provision AWS resources
+- **GitHub Actions** – For CI/CD automation
+- **AWS EC2** – Cloud compute service used in the project
+- **Markdown** – For documentation
 
-### 🗂️ 1. Repository Initialization
-- Initialized Git repository locally.
-- Created remote GitHub repository.
-- Pushed local code to GitHub (`main` branch).
+## 🗂️ Project Structure
+.
+├── .github/workflows/
+│   └── terraform.yml       # GitHub Actions CI/CD pipeline
+├── terraform/
+│   ├── main.tf             # Main Terraform configuration
+│   ├── variables.tf        # Input variable definitions
+│   ├── outputs.tf          # Output values
+│   └── provider.tf         # Provider configurations
+├── .gitignore              # Ignores Terraform state/cache and other files
+├── README.md               # Project overview and instructions
+├── TASKS.md                # Steps and progress documentation
+├── script.sh               # Shell script to run Terraform commands
+└── terraform.zip           # Original zipped Terraform files
 
-### 🌱 2. Branching Strategy
-- Created branches:
-  - `main` – Production-ready branch
-  - `dev` – Development branch
-  - `feature/terraform` – For IaC development
-- Used pull requests to merge into `main`.
 
-### 💾 3. Infrastructure Code (Terraform)
-- Unzipped and organized Terraform files from `terraform.zip`.
-- Provisioned an AWS EC2 instance using Terraform.
-- Created reusable configuration in `terraform/` folder.
+🚀 How to Run the Project
+📦 1. Clone the repository
+git clone https://github.com/soneeya-it21/DevOps-Project.git
+cd DevOps-Project
 
-### 🧪 4. GitHub Actions – CI/CD Pipeline
-- Added a GitHub Actions workflow:
-  - File: `.github/workflows/terraform.yml`
-- Pipeline tasks:
-  - `terraform fmt`
-  - `terraform init`
-  - `terraform validate`
-  - `terraform plan`
+☁️ 2. Initialize & Apply Terraform
+cd terraform
+terraform init
+terraform validate
+terraform plan
+terraform apply
+⚠️ Make sure your AWS CLI is configured before applying (aws configure).
 
-### 🚫 5. Git Hygiene
-- Added `.gitignore` for:
-  - `.terraform/`
-  - `*.tfstate`
-  - `.env`, backups, logs
-- Used `git tag v1.0` to mark the first stable version.
+🔁 CI/CD Pipeline (GitHub Actions)
+Whenever you push to the main branch, the following Terraform tasks are run automatically via GitHub Actions:
 
-### 🧾 6. Documentation
-- `README.md` – High-level project overview
-- `TASKS.md` – Step-by-step task tracker
-- All commits are meaningful and linked to features/tasks
+✅ Format Check (terraform fmt)
 
----
+✅ Initialization (terraform init)
 
-## ✅ Final Result
+✅ Validation (terraform validate)
 
-| Task                                | Status   |
-|-------------------------------------|----------|
-| Repository setup & push to GitHub   | ✅ Done   |
-| Branch creation (`dev`, `feature`)  | ✅ Done   |
-| Pull request merge workflow         | ✅ Done   |
-| README.md created and polished      | ✅ Done   |
-| .gitignore and tags added           | ✅ Done   |
-| CI/CD with GitHub Actions           | ✅ Done   |
-| All tasks documented in markdown    | ✅ Done   |
+✅ Planning (terraform plan)
 
----
+Workflow file: .github/workflows/terraform.yml
 
-🟢 **Project is complete for this task.**
+🧪 Git Branch Strategy
+main – Production-ready code
+dev – Development branch
+feature/terraform – Feature branch for Terraform provisioning
+Pull requests are used to merge feature and dev changes into main.
+
+✅ Completed Tasks
+Initialized Git & pushed to GitHub
+Set up dev, feature, and main branches
+Created and merged pull requests
+Wrote .gitignore and added release tag
+Provisioned EC2 instance using Terraform
+Set up GitHub Actions CI/CD for Terraform
+Created documentation (README.md, TASKS.md)
+
+🏷️ Tag
+The first release has been tagged as:
+git tag v1.0
+git push origin v1.0
+
+📄 License
+This project is for educational purposes.
